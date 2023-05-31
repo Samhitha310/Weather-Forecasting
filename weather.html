@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather Forecast</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+  <div class="container">
+    <h1>Weather Forecast</h1>
+    <div class="weather-info">
+      <h2>City: <span id="city-name"></span></h2>
+      <p>Temperature: <span id="temperature"></span> K</p>
+      <p>Humidity: <span id="humidity"></span>%</p>
+      <p>Description: <span id="description"></span></p>
+    </div>
+  </div>
+
+  <script>
+    const weatherData = JSON.parse('{{ weather_data|tojson }}');
+
+    document.getElementById('city-name').textContent = weatherData.name;
+    document.getElementById('temperature').textContent = weatherData.main.temp;
+    document.getElementById('humidity').textContent = weatherData.main.humidity;
+    document.getElementById('description').textContent = weatherData.weather[0].description;
+  </script>
+</body>
+
+</html>
