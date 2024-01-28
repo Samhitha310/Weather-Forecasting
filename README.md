@@ -1,7 +1,7 @@
-**HTML Opening Tag:
+**HTML Opening Tag:**
 
 Marks the beginning of the HTML document.
-Head Section:
+**Head Section:**
 
 Contains metadata for the document:
 Character set is set to UTF-8.
